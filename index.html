@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Sound Wave Poetry | VishwaNova 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/experience-kit.css" />
+    <link rel="stylesheet" href="../shared/mobile.css" />
+    <link rel="stylesheet" href="../shared/soundkit.css" />
+    <style>
+      canvas {
+        max-width: 100vw !important;
+        max-height: 80vh !important;
+        object-fit: contain;
+      }
+      body {
+        overflow-x: hidden;
+        touch-action: manipulation;
+      }
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="../shared/fx-kit.css" />
+  <link rel="stylesheet" href="../shared/engagement-kit.css" />
+</head>
+  <body>
+    <div id="loader">
+      <div class="loader-content">
+        <p class="loader-text">Composing visual verse...</p>
+      </div>
+    </div>
+    <audio id="bg-audio" loop>
+      <source
+        src="https://cdn.pixabay.com/audio/2022/03/10/audio_115fb53152.mp3?v=63"
+        type="audio/mpeg"
+      /></audio
+    ><button id="audio-toggle">🎵</button>
+    <main id="app">
+      <canvas id="wave-canvas"></canvas>
+      <div id="poem-display"><p id="poem-line"></p></div>
+      <div id="controls">
+        <button id="next-btn">📜 Next Verse</button
+        ><button id="mic-btn">🎤 Use Mic</button
+        ><select id="style-select">
+          <option value="ocean">Ocean Waves</option>
+          <option value="mountain">Mountain Echo</option>
+          <option value="rain">Rain Drops</option>
+          <option value="fire">Fire Crackle</option>
+        </select>
+      </div>
+    </main>
+    <footer class="github-badge">
+      <a href="https://github.com/AkshatRock/weboreel-hackathon" target="_blank"
+        >⭐ GitHub Repo</a
+      ><span>VishwaNova 2026</span>
+    </footer>
+    <script src="../shared/soundkit.js" defer></script>
+    <script src="../shared/experience-kit.js" defer></script>
+    <script src="../shared/engagement-kit.js" defer></script>
+    <script src="../shared/experience-configs-1-21.js" defer></script>
+    <script src="../shared/fx-kit.js" defer></script>
+    <script src="script.js"></script>
+  
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const parts = location.pathname.split("/").filter(Boolean);
+        const slug = parts[parts.length - 2] || "";
+        const cfg = window.WeboReelsExperienceConfigs1to21?.[slug] || { title: document.title };
+        window.WeboReelsExperienceKit?.init?.(cfg);
+      });
+    </script>
+</body>
+</html>
